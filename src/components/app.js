@@ -25,16 +25,13 @@ export default class App extends React.Component {
     this.state = {
       notes: [],
     };
-
-    // this.addItem = this.addItem.bind(this);
-    // this.addNote = this.addNote.bind(this);
-
+    this.addNote = this.addNote.bind(this);
   }
 
-  addItem(data) {
-    let item = {};
-    item[data.id] = data.text;
-    this.setState( Object.assign(this.state.items,item) );
+  addNote(data) {
+    let note = {};
+    note[data.id] = data.text;
+    this.setState( Object.assign(this.state.notes,note) );
   }
 
   componentDidUpdate() {
