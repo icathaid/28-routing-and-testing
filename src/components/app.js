@@ -10,6 +10,10 @@ import {BrowserRouter,Route} from 'react-router-dom';
 import Landing from './landing/landing.js';
 import Dashboard from './dashboard/dashboard.js';
 
+import Notes from './notes/notes.js';
+import Note from './note/note.js';
+
+
 
 import '../style/app.scss';
 
@@ -19,10 +23,11 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      items:{},
+      notes: [],
     };
 
-    this.addItem = this.addItem.bind(this);
+    // this.addItem = this.addItem.bind(this);
+    // this.addNote = this.addNote.bind(this);
 
   }
 
@@ -41,6 +46,8 @@ export default class App extends React.Component {
       <React.Fragment>
         <Route exact path="/" component={Landing} />
         <Route path ="/dashboard" component={Dashboard} />
+        <Route path="/notes" component={Notes} />
+        <Route path="/note" component={Note} />
       </React.Fragment>
       </BrowserRouter>
     )
