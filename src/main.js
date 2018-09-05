@@ -6,9 +6,9 @@ import App from './components/app.js';
 class Main extends React.Component {
   render() {
     return (
-      <App/>
+      <App />
     );
   }
 }
 
-ReactDom.render(<Main/>, document.getElementById('root'));
+ReactDom.render(<Main />, document.getElementById('root'));
