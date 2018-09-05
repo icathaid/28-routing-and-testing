@@ -39,40 +39,15 @@ export default class App extends React.Component {
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/notes" component={Notes} />
           <Route path="/note" component={Note} />
+          <Route path="/note/:id" component={(props) =>
+            <Item
+              {...props}
+              notes={this.state.notes}
+            />
+          }
+          />
         </React.Fragment>
       </BrowserRouter>
     )
   }
-
-
-  // render() {
-  //   return (
-  //     <BrowserRouter>
-  //       <React.Fragment>
-  //         <Header title="Our Basic App" />
-  //         <main>
-  //           <Route exact path="/" component={Home} />
-  //           <Route exact path="/items"
-  //             component={() =>
-  //               <Items
-  //                 handleAdd={this.addItem}
-  //                 items={this.state.items}
-  //               />
-  //             }
-  //           />
-  //           <Route path="/item/:id"
-  //             component={(props) =>
-  //               <Item
-  //                 {...props}
-  //                 items={this.state.items}
-  //               />
-  //             }
-  //           />
-  //         </main>
-  //         <Footer footerText="You hit rock bottom" />
-  //       </React.Fragment>
-  //     </BrowserRouter>
-  //   );
-  // }
-
 }

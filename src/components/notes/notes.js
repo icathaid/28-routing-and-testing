@@ -34,6 +34,7 @@ export default class Notes extends React.Component {
         this.addNote(this.state);
         console.log('handleSubmit');
     }
+
     render() {
         return (
             <div className="notes">
@@ -41,19 +42,13 @@ export default class Notes extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <input name="add" onChange={this.handleChange} />
                 </form>
+                {Object.keys(this.props.notes).map((id, i) =>
+                    <li key={id}>
+                        <Link to={`/note/${id}`}>{this.props.note[id]}</Link>
+                    </li>
+                )
+                }
             </div>
-        )
+        );
     }
-    // jlm update className in css to "notes"
-    // need to add form inputs to create new notes
 }
-
-// <ul>
-//                     {
-//                         Object.keys(this.props.notes).map( (id, i) => 
-//                     <li key={id}>
-//                     <Link to={`/note/${id}`}>{this.props.note[id]}</Link>
-//                     </li>
-//                 )
-//                     }
-//                 </ul>
