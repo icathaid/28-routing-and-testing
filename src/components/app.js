@@ -8,7 +8,7 @@ import {BrowserRouter,Route} from 'react-router-dom';
 // import Item from './item/item.js';
 
 import Landing from './landing/landing.js';
-// import Dashboard from './dashboard/dashboard.js';
+import Dashboard from './dashboard/dashboard.js';
 
 
 import '../style/app.scss';
@@ -39,7 +39,8 @@ export default class App extends React.Component {
     return(
       <BrowserRouter>
       <React.Fragment>
-        <Route path="/" component={Landing} />
+        <Route exact path="/" component={Landing} />
+        <Route path ="/dashboard" component={Dashboard} />
       </React.Fragment>
       </BrowserRouter>
     )
