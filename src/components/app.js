@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter,Route} from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 // import Header from './header/header.js';
 // import Footer from './footer/footer.js';
@@ -25,27 +25,21 @@ export default class App extends React.Component {
     this.state = {
       notes: [],
     };
-    this.addNote = this.addNote.bind(this);
-  }
-
-  addNote(data) {
-    let note = {};
-    note[data.id] = data.text;
-    this.setState( Object.assign(this.state.notes,note) );
+    // this.addNote = this.addNote.bind(this);
   }
 
   componentDidUpdate() {
     console.log('__STATE__', this.state);
   }
-  render(){
-    return(
+  render() {
+    return (
       <BrowserRouter>
-      <React.Fragment>
-        <Route exact path="/" component={Landing} />
-        <Route path ="/dashboard" component={Dashboard} />
-        <Route path="/notes" component={Notes} />
-        <Route path="/note" component={Note} />
-      </React.Fragment>
+        <React.Fragment>
+          <Route exact path="/" component={Landing} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/notes" component={Notes} />
+          <Route path="/note" component={Note} />
+        </React.Fragment>
       </BrowserRouter>
     )
   }
