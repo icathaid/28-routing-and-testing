@@ -25,11 +25,17 @@ export default class App extends React.Component {
     this.state = {
       notes: [],
     };
-    // this.addNote = this.addNote.bind(this);
+    this.addNote = this.addNote.bind(this);
   }
 
   componentDidUpdate() {
     console.log('__STATE__', this.state);
+  }
+
+  addNote(data) {
+    let note = {};
+    note[data.id] = data.text;
+    console.log('   THIS.STATE.NOTES   ', this.state.notes);
   }
   render() {
     return (
@@ -37,7 +43,12 @@ export default class App extends React.Component {
         <React.Fragment>
           <Route exact path="/" component={Landing} />
           <Route path="/dashboard" component={Dashboard} />
-          <Route path="/notes" component={Notes} />
+          <Route path="/notes" component={() =>
+            <Notes addNote={this.addNote}
+              notes={this.state.notes}
+            />
+
+          } />
           <Route path="/note" component={Note} />
           <Route path="/note/:id" component={(props) =>
             <Item
