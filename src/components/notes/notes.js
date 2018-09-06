@@ -25,7 +25,6 @@ export default class Notes extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.addNote(this.state);
-        console.log('handleSubmit');
     }
 
     render() {
@@ -35,16 +34,14 @@ export default class Notes extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <input name="add" onChange={this.handleChange} />
                 </form>
+                {Object.keys(this.props.notes).map((id, i) => 
+                <li key={id}>
                 
+                </li>
+                    )}
             </div>
         );
     }
 }
 
-
-// {Object.keys(this.props.notes).map((id, i) =>
-//     <li key={id}>
-//         <Link to={`/note/${id}`}>{this.props.note[id]}</Link>
-//     </li>
-// )
-// }
+{/* <Link to={`/note/${id}`}>{this.props.note[id]}</Link> */}

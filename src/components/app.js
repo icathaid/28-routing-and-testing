@@ -35,7 +35,9 @@ export default class App extends React.Component {
   addNote(data) {
     let note = {};
     note[data.id] = data.text;
-    console.log('   THIS.STATE.NOTES   ', this.state.notes);
+    console.log('     NOTE[DATA.ID]     ', note[data.id]);
+    this.setState(Object.assign(this.state.notes, note));
+
   }
   render() {
     return (
@@ -47,7 +49,6 @@ export default class App extends React.Component {
             <Notes addNote={this.addNote}
               notes={this.state.notes}
             />
-
           } />
           <Route path="/note" component={Note} />
           <Route path="/note/:id" component={(props) =>
