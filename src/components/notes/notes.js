@@ -30,13 +30,12 @@ export default class Notes extends React.Component {
     render() {
         return (
             <div className="notes">
-                <Link to="/note">Note 1</Link>
                 <form onSubmit={this.handleSubmit}>
                     <input name="add" onChange={this.handleChange} />
                 </form>
                 {Object.keys(this.props.notes).map((id, i) => 
                 <li key={id}>
-                
+                <Link to={`note/${id}`}>Working Link</Link>
                 </li>
                     )}
             </div>

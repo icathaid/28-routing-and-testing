@@ -50,9 +50,8 @@ export default class App extends React.Component {
               notes={this.state.notes}
             />
           } />
-          <Route path="/note" component={Note} />
-          <Route path="/note/:id" component={(props) =>
-            <Item
+          <Route exact path="/note/:id" component={(props) =>
+            <Note
               {...props}
               notes={this.state.notes}
             />
