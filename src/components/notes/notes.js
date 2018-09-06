@@ -10,16 +10,9 @@ export default class Notes extends React.Component {
             text: '',
             // jlm need to add the rest of the note parameters once this is working
         }
-        this.addNote = this.addNote.bind(this);
+        
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    addNote(data) {
-        let note = {};
-        note[data.id] = data.text;
-        this.setState(Object.assign(this.state.notes, note));
-        console.log('addnote');
     }
 
     handleChange(e) {
@@ -31,8 +24,7 @@ export default class Notes extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.addNote(this.state);
-        console.log('handleSubmit');
+        this.props.addNote(this.state);
     }
 
     render() {
@@ -42,13 +34,14 @@ export default class Notes extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <input name="add" onChange={this.handleChange} />
                 </form>
-                {Object.keys(this.props.notes).map((id, i) =>
-                    <li key={id}>
-                        <Link to={`/note/${id}`}>{this.props.note[id]}</Link>
-                    </li>
-                )
-                }
+                {Object.keys(this.props.notes).map((id, i) => 
+                <li key={id}>
+                
+                </li>
+                    )}
             </div>
         );
     }
 }
+
+{/* <Link to={`/note/${id}`}>{this.props.note[id]}</Link> */}
