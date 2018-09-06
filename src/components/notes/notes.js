@@ -35,7 +35,7 @@ export default class Notes extends React.Component {
                 </form>
                 {Object.keys(this.props.notes).map((id, i) => 
                 <li key={id}>
-                <Link to={`note/${id}`}>Working Link</Link>
+                <Link to={`note/${id}`}>{this.props.notes[id]}</Link>
                 </li>
                     )}
             </div>
