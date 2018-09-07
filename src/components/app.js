@@ -1,12 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-// import Header from './header/header.js';
-// import Footer from './footer/footer.js';
-// import Home from './home/home.js';
-// import Items from './items/items.js';
-// import Item from './item/item.js';
-
 import Landing from './landing/landing.js';
 import Dashboard from './dashboard/dashboard.js';
 
@@ -35,9 +29,8 @@ export default class App extends React.Component {
   addNote(data) {
     let note = {};
     note[data.id] = data.text;
-    console.log('     NOTE[DATA.ID]     ', note[data.id]);
     this.setState(Object.assign(this.state.notes, note));
-
+    console.log(note);
   }
   render() {
     return (
