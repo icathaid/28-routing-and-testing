@@ -8,7 +8,8 @@ export default class Notes extends React.Component {
         this.state = {
             id: '',
             title: '',
-            content: ''
+            content: '',
+            editable: false
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,6 +36,9 @@ export default class Notes extends React.Component {
                     <input
                         type="text"
                         onChange={this.handleChange('content')} />
+                    <input
+                        type="checkbox"
+                        onChange={this.handleChange('editable')} />
                     <input type="submit" />
                 </form>
 

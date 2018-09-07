@@ -1,3 +1,4 @@
+'use strict';
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -23,13 +24,18 @@ export default class App extends React.Component {
 
   addNote(data) {
     let note = {};
+    let editable = false;
+    if(data.editable === 'on'){
+      editable = true;
+    }
     note[data.id] = {
       id: data.id,
       title: data.title,
-      content: data.content
+      content: data.content,
+      editable: editable
     };
     this.setState(Object.assign(this.state.notes, note));
-    console.log('    DATA    ', data);
+    // console.log('    DATA    ', data);
   }
 
   render() {
