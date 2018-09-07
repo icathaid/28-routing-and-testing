@@ -32,7 +32,6 @@ export default class Notes extends React.Component {
                     <input
                         name="title"
                         onChange={this.handleChange} />
-
                 </form>
 
                 {Object.keys(this.props.notes).map((id, i) =>
