@@ -17,7 +17,7 @@ export default class Notes extends React.Component {
     handleChange(e) {
         let id = uuid();
         let title = e.target.value;
-        this.setState({id, title})
+        this.setState({ id, title })
     }
 
     handleSubmit(e) {
@@ -36,7 +36,7 @@ export default class Notes extends React.Component {
 
                 {Object.keys(this.props.notes).map((id, i) =>
                     <li key={id}>
-                        {/* <Link to={`note/${id}`}>{this.props.notes[id]}</Link> */}
+                        <Link to={`note/${id}`}>{this.props.notes[id].title}</Link>
                     </li>
                 )}
             </div>

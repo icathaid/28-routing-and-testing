@@ -8,7 +8,8 @@ export default class Item extends React.Component {
         return (
             <React.Fragment>
                 <h2>This is going to be an individual note.</h2>
-                <span>{this.props.notes[this.props.match.params.id]}</span>
+                <span>{this.props.notes[this.props.match.params.id].title}</span>
+
             </React.Fragment>
         );
     }
