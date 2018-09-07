@@ -7,7 +7,7 @@ export default class Landing extends React.Component {
             <React.Fragment>
                 <h2>You just landed here</h2>
                 <p>This is a brief description of my notes app</p>
-                <Link to="/notes">Notes</Link>
+                <Link to="/dashboard">Dashboard</Link>
             </React.Fragment>
         )
     }

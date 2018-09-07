@@ -7,19 +7,16 @@ export default class Notes extends React.Component {
         super(props);
         this.state = {
             id: '',
-            text: '',
-            // jlm need to add the rest of the note parameters once this is working
+            title: '',
+            content: ''
         }
-        
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(e) {
+    handleChange = (name) => (e) => {
         let id = uuid();
-        let text = e.target.value;
-        // jlm add other note params to setstate inputs next line
-        this.setState({ id, text });
+        this.setState({ id, [name]: e.target.value })
     }
 
     handleSubmit(e) {
@@ -31,16 +28,22 @@ export default class Notes extends React.Component {
         return (
             <div className="notes">
                 <form onSubmit={this.handleSubmit}>
-                    <input name="add" onChange={this.handleChange} />
+                    <label>Title</label>
+                    <input
+                        type="text"
+                        onChange={this.handleChange('title')} />
+                    <input
+                        type="text"
+                        onChange={this.handleChange('content')} />
+                    <input type="submit" />
                 </form>
-                {Object.keys(this.props.notes).map((id, i) => 
-                <li key={id}>
-                <Link to={`note/${id}`}>Working Link</Link>
-                </li>
-                    )}
+
+                {Object.keys(this.props.notes).map((id, i) =>
+                    <li key={id}>
+                        <Link to={`note/${id}`}>{this.props.notes[id].title}</Link>
+                    </li>
+                )}
             </div>
         );
     }
 }
-
-{/* <Link to={`/note/${id}`}>{this.props.note[id]}</Link> */}

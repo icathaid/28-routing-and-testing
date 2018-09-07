@@ -1,27 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-// import Header from './header/header.js';
-// import Footer from './footer/footer.js';
-// import Home from './home/home.js';
-// import Items from './items/items.js';
-// import Item from './item/item.js';
-
 import Landing from './landing/landing.js';
 import Dashboard from './dashboard/dashboard.js';
-
 import Notes from './notes/notes.js';
 import Note from './note/note.js';
-
-
 
 import '../style/app.scss';
 
 export default class App extends React.Component {
-
   constructor(props) {
     super(props);
-
     this.state = {
       notes: [],
     };
@@ -34,11 +23,15 @@ export default class App extends React.Component {
 
   addNote(data) {
     let note = {};
-    note[data.id] = data.text;
-    console.log('     NOTE[DATA.ID]     ', note[data.id]);
+    note[data.id] = {
+      id: data.id,
+      title: data.title,
+      content: data.content
+    };
     this.setState(Object.assign(this.state.notes, note));
-
+    console.log('    DATA    ', data);
   }
+
   render() {
     return (
       <BrowserRouter>
