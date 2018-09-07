@@ -7,9 +7,6 @@ export default class Notes extends React.Component {
         super(props);
         this.state = {
             id: '',
-            editing: false,
-            completed: false,
-            content: '',
             title: ''
         }
 
@@ -19,8 +16,8 @@ export default class Notes extends React.Component {
 
     handleChange(e) {
         let id = uuid();
-        let text = e.target.value;
-        this.setState({ id, text });
+        let title = e.target.value;
+        this.setState({id, title})
     }
 
     handleSubmit(e) {
@@ -35,12 +32,12 @@ export default class Notes extends React.Component {
                     <input
                         name="title"
                         onChange={this.handleChange} />
-                    
+
                 </form>
 
                 {Object.keys(this.props.notes).map((id, i) =>
                     <li key={id}>
-                        <Link to={`note/${id}`}>{this.props.notes[id]}</Link>
+                        {/* <Link to={`note/${id}`}>{this.props.notes[id]}</Link> */}
                     </li>
                 )}
             </div>

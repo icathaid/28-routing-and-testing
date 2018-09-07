@@ -28,9 +28,12 @@ export default class App extends React.Component {
 
   addNote(data) {
     let note = {};
-    note[data.id] = data.text;
+    note[data.id] = {
+      id: data.id,
+      title: data.title
+    };
     this.setState(Object.assign(this.state.notes, note));
-    console.log(note);
+    console.log('    DATA    ', data);
   }
   render() {
     return (
