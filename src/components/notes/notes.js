@@ -10,7 +10,6 @@ export default class Notes extends React.Component {
             title: '',
             content: ''
         }
-
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -19,7 +18,6 @@ export default class Notes extends React.Component {
         let id = uuid();
         this.setState({ id, [name]: e.target.value })
     }
-
 
     handleSubmit(e) {
         e.preventDefault();
@@ -33,16 +31,11 @@ export default class Notes extends React.Component {
                     <label>Title</label>
                     <input
                         type="text"
-                        onChange={this.handleChange('title')}
-                    />
+                        onChange={this.handleChange('title')} />
                     <input
                         type="text"
-                        onChange={this.handleChange('content')}
-                    />
-                    <input 
-                        type="submit"
-                        // onChange={this.handleChange()}
-                    />
+                        onChange={this.handleChange('content')} />
+                    <input type="submit" />
                 </form>
 
                 {Object.keys(this.props.notes).map((id, i) =>

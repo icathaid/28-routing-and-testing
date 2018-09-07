@@ -1,3 +1,17 @@
+?s for saturday:
+
+why is it creating a duplicate item in state for each item outside of the notes array?
+
+where to insert conditional logic for checking if fields are blank?  (this may be in lecture video)
+  - watch next video
+
+how to increase size of text input box?
+
+add checkbox for editable when entering
+
+if editable, should render new <input> prepopulated with the old .content, otherwise should just render a <p>
+
+
 ![cf](http://i.imgur.com/7v5ASc8.png) 28: To Do
 ===
 

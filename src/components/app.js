@@ -3,19 +3,14 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Landing from './landing/landing.js';
 import Dashboard from './dashboard/dashboard.js';
-
 import Notes from './notes/notes.js';
 import Note from './note/note.js';
-
-
 
 import '../style/app.scss';
 
 export default class App extends React.Component {
-
   constructor(props) {
     super(props);
-
     this.state = {
       notes: [],
     };
@@ -36,6 +31,7 @@ export default class App extends React.Component {
     this.setState(Object.assign(this.state.notes, note));
     console.log('    DATA    ', data);
   }
+
   render() {
     return (
       <BrowserRouter>
