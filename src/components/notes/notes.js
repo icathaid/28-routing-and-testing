@@ -7,18 +7,19 @@ export default class Notes extends React.Component {
         super(props);
         this.state = {
             id: '',
-            title: ''
+            title: '',
+            content: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(e) {
+    handleChange = (name) => (e) => {
         let id = uuid();
-        let title = e.target.value;
-        this.setState({ id, title })
+        this.setState({ id, [name]: e.target.value })
     }
+
 
     handleSubmit(e) {
         e.preventDefault();
@@ -29,9 +30,19 @@ export default class Notes extends React.Component {
         return (
             <div className="notes">
                 <form onSubmit={this.handleSubmit}>
+                    <label>Title</label>
                     <input
-                        name="title"
-                        onChange={this.handleChange} />
+                        type="text"
+                        onChange={this.handleChange('title')}
+                    />
+                    <input
+                        type="text"
+                        onChange={this.handleChange('content')}
+                    />
+                    <input 
+                        type="submit"
+                        // onChange={this.handleChange()}
+                    />
                 </form>
 
                 {Object.keys(this.props.notes).map((id, i) =>
