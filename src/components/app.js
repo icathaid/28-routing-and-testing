@@ -16,6 +16,7 @@ export default class App extends React.Component {
       notes: [],
     };
     this.addNote = this.addNote.bind(this);
+    this.deleteNote = this.deleteNote.bind(this);
   }
 
   componentDidUpdate() {
@@ -35,7 +36,12 @@ export default class App extends React.Component {
       editable: editable
     };
     this.setState(Object.assign(this.state.notes, note));
-    // console.log('    DATA    ', data);
+  }
+
+  deleteNote(idToDelete) {
+    // let filteredArray = this.state.notes.filter(id => id !== idToDelete);
+    // this.setState({ notes: filteredArray });
+    console.log(idToDelete);
   }
 
   render() {
