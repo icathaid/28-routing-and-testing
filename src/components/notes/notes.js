@@ -25,6 +25,7 @@ export default class Notes extends React.Component {
         this.props.addNote(this.state);
     }
 
+    
     render() {
         return (
             <div className="notes">
