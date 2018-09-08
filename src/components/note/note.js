@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 export default class Note extends React.Component {
     constructor(props) {
         super(props);
@@ -14,7 +16,7 @@ export default class Note extends React.Component {
     //     this.props.deleteNote(id);
     // }
     handleDelete(e) {
-       alert('delete button was clicked');
+       console.log('delete button was clicked');
     }
     render() {
         let isEditable = this.props.notes[this.props.match.params.id].editable;

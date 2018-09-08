@@ -1,5 +1,7 @@
 ?s for saturday:
 
+can(should) app.js be a functional component?  (handle state entirely within dashboard)
+
 why is it creating a duplicate item in state for each item outside of the notes array?
 
 where to insert conditional logic for checking if fields are blank?  (this may be in lecture video)

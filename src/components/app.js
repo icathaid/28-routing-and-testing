@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Link, BrowserRouter, Route } from 'react-router-dom';
 
 import Landing from './landing/landing.js';
 import Dashboard from './dashboard/dashboard.js';
@@ -48,6 +48,10 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
         <React.Fragment>
+          <nav>
+            <Link to="/">Landing</Link>
+            <Link to="/dashboard">Dashboard</Link>
+          </nav>
           <Route exact path="/" component={Landing} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/notes" component={() =>
