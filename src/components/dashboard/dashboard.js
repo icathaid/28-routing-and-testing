@@ -3,11 +3,6 @@ import { Link, BrowserRouter, Route } from 'react-router-dom';
 import Notes from '.././notes/notes.js';
 import Note from '.././note/note.js';
 
-
-
-//  jlm instead of link to notes app, can i import notes as a component and run the functionality from here?
-
-
 export default class Dashboard extends React.Component {
     constructor(props) {
         super(props);
@@ -18,24 +13,36 @@ export default class Dashboard extends React.Component {
         this.removeNote = this.removeNote.bind(this);
     }
 
-    addNote(data) {
-        let note = {};
-        let editable = false;
-        if (data.editable === 'on') {
-            editable = true;
-        }
-        note[data.id] = {
-            id: data.id,
-            title: data.title,
-            content: data.content,
-            editable: editable
-        };
-        this.setState(Object.assign(this.state.notes, note));
+    //  hacky way that i wrote it, i think this is causing the double additions to state
+    // addNote(data) {
+    //     let note = {};
+    //     let editable = false;
+    //     if (data.editable === 'on') {
+    //         editable = true;
+    //     }
+    //     note[data.id] = {
+    //         id: data.id,
+    //         title: data.title,
+    //         content: data.content,
+    //         editable: editable
+    //     };
+    //     this.setState(Object.assign(this.state.notes, note));
+    //     console.log(note);
+    //     console.log(this.state.notes);
+    // }
+
+    
+    //  from the demo:
+    addNote = note => {
+        let notes = [...this.state.notes, note];
+        this.setState({
+            notes
+        });
     }
 
     removeNote(idToDelete) {
-        // let filteredArray = this.state.notes.filter(id => id !== idToDelete);
-        // this.setState({ notes: filteredArray });
+        let filteredArray = this.state.notes.filter(id => id !== idToDelete);
+        this.setState({ notes: filteredArray });
         console.log(idToDelete);
     }
 
@@ -43,7 +50,6 @@ export default class Dashboard extends React.Component {
         return (
             <BrowserRouter>
             <React.Fragment>
-
                 <Route path="/notes" component={() =>
                     <Notes addNote={this.addNote}
                         notes={this.state.notes}
@@ -55,9 +61,8 @@ export default class Dashboard extends React.Component {
                     />} />
                 <h2>Dashboard</h2>
                 <Link to="/notes">Notes</Link>
-
             </React.Fragment>
-            </BrowserRouter >
+            </BrowserRouter>
         );
     }
 }

@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import uuid from 'uuid/v4';
 
+
+//  jlm  notes.js === NoteCreateForm.js
+
+
 export default class Notes extends React.Component {
     constructor(props) {
         super(props);
@@ -16,13 +20,12 @@ export default class Notes extends React.Component {
     }
 
     handleChange = (name) => (e) => {
-        let id = uuid();
-        this.setState({ id, [name]: e.target.value })
+        this.setState({ [name]: e.target.value })
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.addNote(this.state);
+        this.props.addNote({...this.state, id: uuid() });
     }
 
     render() {
