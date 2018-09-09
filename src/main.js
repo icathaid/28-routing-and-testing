@@ -3,12 +3,10 @@ import ReactDom from 'react-dom';
 
 import App from './components/app.js';
 
-class Main extends React.Component {
-  render() {
-    return (
-      <App />
-    );
-  }
+function Main (){
+  return (
+    <App />
+  )
 }
 
 ReactDom.render(<Main />, document.getElementById('root'));
