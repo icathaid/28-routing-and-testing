@@ -1,10 +1,15 @@
-?s for saturday:
+label checkboxes
+
+create actual documentation
+
+need to add notes route to app.js so refresh works
+  can i add the same route in two different files?  what if they conflict?
 
 app should render dashboard component, notes should be imported by dashboard
 
 check out navlinks vs links
 
-why is it creating a duplicate item in state for each item outside of the notes array?
+add conditional rendering so 'Notes' link doesn't appear in note view
 
 where to insert conditional logic for checking if fields are blank?  (this may be in lecture video)
   - watch next video
