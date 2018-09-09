@@ -1,6 +1,8 @@
 ?s for saturday:
 
-can(should) app.js be a functional component?  (handle state entirely within dashboard)
+app should render dashboard component, notes should be imported by dashboard
+
+check out navlinks vs links
 
 why is it creating a duplicate item in state for each item outside of the notes array?
 
@@ -8,8 +10,6 @@ where to insert conditional logic for checking if fields are blank?  (this may b
   - watch next video
 
 how to increase size of text input box?
-
-add checkbox for editable when entering
 
 if editable, should render new <input> prepopulated with the old .content, otherwise should just render a <p>
 
