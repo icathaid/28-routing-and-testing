@@ -13,19 +13,31 @@ export default class Dashboard extends React.Component {
         this.removeNote = this.removeNote.bind(this);
     }
 
-    addNote(data) {
-        let note = {};
-        let editable = false;
-        if (data.editable === 'on') {
-            editable = true;
-        }
-        note[data.id] = {
-            id: data.id,
-            title: data.title,
-            content: data.content,
-            editable: editable
-        };
-        this.setState(Object.assign(this.state.notes, note));
+    //  hacky way that i wrote it, i think this is causing the double additions to state
+    // addNote(data) {
+    //     let note = {};
+    //     let editable = false;
+    //     if (data.editable === 'on') {
+    //         editable = true;
+    //     }
+    //     note[data.id] = {
+    //         id: data.id,
+    //         title: data.title,
+    //         content: data.content,
+    //         editable: editable
+    //     };
+    //     this.setState(Object.assign(this.state.notes, note));
+    //     console.log(note);
+    //     console.log(this.state.notes);
+    // }
+
+    
+    //  from the demo:
+    addNote = note => {
+        let notes = [...this.state.notes, note];
+        this.setState({
+            notes
+        });
     }
 
     removeNote(idToDelete) {
