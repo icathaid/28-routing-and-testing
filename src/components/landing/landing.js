@@ -1,14 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component, Fragment } from "react";
 
-export default class Landing extends React.Component {
+export default class Landing extends Component {
     render() {
         return (
-            <React.Fragment>
-                <h2>You just landed here</h2>
-                <p>This is a brief description of my notes app</p>
-                
-            </React.Fragment>
-        )
-    }
-}
+            <Fragment>
+                <h1>Landing</h1>
+                <p>This will be a landing page</p>
+            </Fragment>
+        );
+    };
+};

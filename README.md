@@ -1,4 +1,12 @@
+branches:
+james = first effort, built out from item demo
+james2 = second effort, tried to migrate code from note app demo to fix holes, broke everything
+james3 = third effort, building it out from the note app demo and timeboxing
+
+
 label checkboxes
+
+
 
 create actual documentation
 

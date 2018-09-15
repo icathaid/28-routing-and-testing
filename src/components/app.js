@@ -1,30 +1,19 @@
-'use strict';
-import React from 'react';
-import { NavLink, BrowserRouter, Route } from 'react-router-dom';
-
-import Landing from './landing/landing.js';
+import React, { Fragment } from 'react';
+import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import Dashboard from './dashboard/dashboard.js';
-import '../style/app.scss';
+import Landing from './landing/landing.js';
 
-export default class App extends React.Component {
-
-  componentDidUpdate() {
-    console.log('__STATE__', this.state);
-  }
-
-  render() {
+export default props => {
     return (
-      <BrowserRouter>
-        <React.Fragment>
-          <nav>
-            <NavLink to="/">Landing</NavLink>
-            <NavLink to="/dashboard">Dashboard</NavLink>
-          </nav>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          
-        </React.Fragment>
-      </BrowserRouter>
-    )
-  }
-}
+        <BrowserRouter>
+            <Fragment>
+                <nav>
+                    <NavLink to="/">Landing</NavLink>
+                    <NavLink to="/dashboard">Dashboard</NavLink>
+                </nav>
+                <Route exact path="/" component={Landing} />
+                <Route path="/dashboard" component={Dashboard} />
+            </Fragment>
+        </BrowserRouter>
+    );
+};
