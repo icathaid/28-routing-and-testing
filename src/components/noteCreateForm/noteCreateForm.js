@@ -33,8 +33,8 @@ export default class NoteCreateForm extends Component {
     render() {
         return (
             <form onSubmit={this.onSubmit} onChange={this.onChange}>
-                <input name="title" placeholder="title" value={this.state.title} />
-                <textarea name="content" placeholder="content" value={this.state.content} />
+                <input name="title" className="title" value={this.state.title} />
+                <textarea name="content" className="content" value={this.state.content} />
                 <label>
                     <span>editing</span>
                     <input name="editing" type="checkbox" />
