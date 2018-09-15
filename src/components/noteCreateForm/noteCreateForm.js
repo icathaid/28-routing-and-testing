@@ -15,8 +15,8 @@ export default class NoteCreateForm extends Component {
         event.preventDefault();
         this.props.onSubmit({ ...this.state, id: uuid() });
         this.setState({
-            title: '',
-            content: ''
+            title: this.state.title,
+            content: this.state.content
         });
     }
 

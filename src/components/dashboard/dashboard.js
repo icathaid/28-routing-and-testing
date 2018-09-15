@@ -16,11 +16,8 @@ export default class Dashboard extends Component {
     };
 
     removeNote = id => {
-        console.log(this.state.notes);
         let notes = this.state.notes.slice();
-        console.log('notes', notes);
-        let newNotes = this.state.notes.filter(notes => notes.id !== id);
-        console.log('newNotes', newNotes);
+        let newNotes = notes.filter(notes => notes.id !== id);
         this.setState({
             newNotes
         });
