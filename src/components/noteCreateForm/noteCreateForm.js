@@ -14,6 +14,10 @@ export default class NoteCreateForm extends Component {
     onSubmit = event => {
         event.preventDefault();
         this.props.onSubmit({ ...this.state, id: uuid() });
+        this.setState({
+            title: '',
+            content: ''
+        });
     }
 
     onChange = event => {
@@ -29,8 +33,8 @@ export default class NoteCreateForm extends Component {
     render() {
         return (
             <form onSubmit={this.onSubmit} onChange={this.onChange}>
-                <input name="title" placeholder="title" />
-                <textarea name="content" placeholder="content" />
+                <input name="title" placeholder="title" value={this.state.title} />
+                <textarea name="content" placeholder="content" value={this.state.content} />
                 <label>
                     <span>editing</span>
                     <input name="editing" type="checkbox" />

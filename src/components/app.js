@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
-import { BrowserRouter, Route, NavLink } from "react-router-dom";
-import Dashboard from "./Dashboard";
-import Landing from "./Landing";
+import React, { Fragment } from 'react';
+import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import Dashboard from './dashboard/dashboard.js';
+import Landing from './landing/landing.js';
 
 export default props => {
     return (

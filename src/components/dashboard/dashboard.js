@@ -1,41 +1,28 @@
-import React, { Component, Fragment } from "react";
-import NoteCreateForm from "./NoteCreateForm";
-import NoteList from "./NoteList";
+import React, { Component, Fragment } from 'react';
+import NoteCreateForm from '.././noteCreateForm/noteCreateForm.js';
+import NoteList from ".././noteList/noteList.js";
 
 export default class Dashboard extends Component {
     state = {
         notes: []
     }
 
-    // jlm in case the other way doesn't work
-
-    // constructor(props) {
-    //     super(props);
-    //     this.addNote = this.addNote.bind(this);
-    //     this.removeNote = this.removeNote.bind(this);
-    // }
-
-    // addNote = note => {
-    //     let notes = this.state.notes.slice();
-    //     notes.push(note);
-    //     this.setState({
-    //         notes
-    //     });
-    // };
-
-
-
-    addNote(note) {
-        let notes = [...this.state.notes, note];
+    addNote = note => {
+        let notes = this.state.notes.slice();
+        notes.push(note);
         this.setState({
             notes
         });
     };
 
-    removeNote(id) {
-        const notes = this.state.notes.filter(note => note.id !== id);
+    removeNote = id => {
+        console.log(this.state.notes);
+        let notes = this.state.notes.slice();
+        console.log('notes', notes);
+        let newNotes = this.state.notes.filter(notes => notes.id !== id);
+        console.log('newNotes', newNotes);
         this.setState({
-            notes
+            newNotes
         });
     };
 
